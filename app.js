@@ -3,11 +3,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const environment = process.env.NODE_ENV || 'development';
-const configuration = require('./knexfile')[environment];
-
 var indexRouter = require('./routes/index');
-var papersRouter = require('./routes/api/v1/papers');
+var vocabRouter = require('./routes/api/v1/vocab');
 
 var app = express();
 
@@ -18,6 +15,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api/v1/papers', papersRouter);
+app.use('/api/v1/vocab', vocabRouter);
 
 module.exports = app;
