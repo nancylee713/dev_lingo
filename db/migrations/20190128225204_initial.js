@@ -6,7 +6,7 @@ exports.up = function(knex) {
       table.string('term');
       table.string('meaning');
       table.string('category');
-      table.string('etc');
+      table.string('references').defaultTo(null);
 
       table.timestamps(true, true);
     })

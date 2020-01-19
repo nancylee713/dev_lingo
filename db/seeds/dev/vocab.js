@@ -3,7 +3,7 @@ exports.seed = function(knex) {
     .then(() => {
       return Promise.all([
         knex('vocab').insert({
-          term: 'test', meaning: 'meaning', category: 'test', etc: ''
+          term: 'test', meaning: 'meaning', category: 'test', references: ''
         }, 'id')
         .then(() => console.log('Seeding complete!'))
         .catch(error => console.log(`Error seeding data: ${error}`))
